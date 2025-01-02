@@ -21,7 +21,7 @@ const PrayerTimes = () => {
   useEffect(() => {
     const fetchPrayerTimes = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/timings');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/timings`);
         setPrayerTimes(response.data.data.timings);
         setLoading(false);
       } catch (error) {
